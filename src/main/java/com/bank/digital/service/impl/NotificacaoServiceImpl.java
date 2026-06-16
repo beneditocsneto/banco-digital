@@ -28,7 +28,7 @@ public class NotificacaoServiceImpl implements TransferObserver {
     @Override
     public void onTransferCompleted(TransferEvent event) {
         try {
-            Thread.sleep(200);
+            Thread.sleep(200);//simula latência da notificação.
 
             log.info("=== NOTIFICAÇÃO DE TRANSFERÊNCIA ===");
             log.info("Origem: {} ({})", event.source().getHolderName(), event.source().getAccountNumber());
