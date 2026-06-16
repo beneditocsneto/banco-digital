@@ -3,7 +3,7 @@ API REST simplificada para um banco digital, permitindo transferências entre co
 
 ## Como Rodar o Projeto
 ### Pré-requisitos
-- Java 17+ instalado (`java -version`)
+- Java 21+ instalado (`java -version`)
 - Maven 3.6+ instalado (`mvn -version`)
 
 ### Build
