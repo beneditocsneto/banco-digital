@@ -25,6 +25,10 @@ API REST simplificada para um banco digital, permitindo transferências entre co
 
 # Via JAR
 java -jar target/digital-bank-1.0.0.jar
+
+# Via Docker
+docker build -t digital-bank .
+docker run -p 8080:8080 digital-bank
 ```
 A aplicação sobe em: **http://localhost:8080**
 
