@@ -44,7 +44,7 @@ public class NotificacaoServiceImpl implements TransferObserver {
     private String formatCurrency(BigDecimal amount, String currency) {
         return switch (currency.toUpperCase()) {
             case "BRL" -> {
-                NumberFormat nf = NumberFormat.getCurrencyInstance(new Locale("pt", "BR"));
+                NumberFormat nf = NumberFormat.getCurrencyInstance(Locale.of("pt", "BR"));
                 yield nf.format(amount);
             }
             case "USD" -> String.format("US$ %,.2f", amount);
