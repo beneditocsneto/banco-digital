@@ -12,11 +12,11 @@ public class TransferObservable {
 
     private final List<TransferObserver> observers = new ArrayList<>();
 
-    public void register(TransferObserver observer) {
+    public void registerObserver(TransferObserver observer) {
         observers.add(observer);
     }
 
-    public void notify(TransferEvent event) {
+    public void notifyObservers(TransferEvent event) {
         observers.forEach(obs -> obs.onTransferCompleted(event));
     }
 }

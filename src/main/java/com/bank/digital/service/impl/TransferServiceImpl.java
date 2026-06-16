@@ -130,7 +130,7 @@ public class TransferServiceImpl implements TransferService {
     }
 
     private void notifyObservers(Account source, Account target, TransferRequest request) {
-        transferObservable.notify(
+        transferObservable.notifyObservers(
                 new TransferEvent(source, target, request.getAmount(), request.getCurrency()));
     }
 

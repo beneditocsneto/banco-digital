@@ -21,7 +21,7 @@ public class NotificacaoServiceImpl implements TransferObserver {
 
     @PostConstruct
     void init() {
-        transferObservable.register(this);
+        transferObservable.registerObserver(this);
     }
 
     @Async

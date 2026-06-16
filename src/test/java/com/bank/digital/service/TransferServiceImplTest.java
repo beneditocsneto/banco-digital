@@ -111,7 +111,7 @@ class TransferServiceImplTest {
             assertEquals(new BigDecimal("4500.00"), sourceAccount.getBalance());
             assertEquals(new BigDecimal("3500.00"), targetAccount.getBalance());
 
-            verify(transferObservable, times(1)).notify(
+            verify(transferObservable, times(1)).notifyObservers(
                     new TransferEvent(sourceAccount, targetAccount, new BigDecimal("500.00"), "BRL"));
         }
 
