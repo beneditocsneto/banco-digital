@@ -266,7 +266,7 @@ class TransferServiceImplTest {
             TransferResponse response = transferService.transfer(request);
 
             assertEquals("COMPLETED", response.getStatus());
-            assertEquals(BigDecimal.ZERO.compareTo(sourceAccount.getBalance()), 0);
+            assertEquals(0, BigDecimal.ZERO.compareTo(sourceAccount.getBalance()));
             assertEquals(new BigDecimal("8000.00"), targetAccount.getBalance());
         }
     }
