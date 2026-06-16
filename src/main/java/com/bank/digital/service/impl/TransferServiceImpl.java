@@ -9,6 +9,7 @@ import com.bank.digital.dto.response.TransferResponse;
 import com.bank.digital.exception.AccountNotFoundException;
 import com.bank.digital.exception.DuplicateTransactionException;
 import com.bank.digital.exception.InsufficientBalanceException;
+import com.bank.digital.exception.TransactionNotFoundException;
 import com.bank.digital.service.TransferService;
 import com.bank.digital.service.TransferEvent;
 import lombok.RequiredArgsConstructor;
@@ -62,7 +63,7 @@ public class TransferServiceImpl implements TransferService {
     @Transactional(readOnly = true)
     public TransferResponse getTransactionByExternalId(String externalId) {
         Transaction transaction = transactionRepository.findByExternalId(externalId)
-                .orElseThrow(() -> new RuntimeException("Transação não encontrada: " + externalId));
+                .orElseThrow(() -> new TransactionNotFoundException("Transação não encontrada: " + externalId));
         return toTransferResponse(transaction);
     }
 
